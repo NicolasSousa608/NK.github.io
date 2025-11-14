@@ -1,0 +1,381 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #ffe9ec, #fff7f0);
+  color: #444;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: #ffb6c1;
+  color: #fff;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  
+.logo {
+  width: 60px;   
+  height: auto;
+  border-radius: 8px;
+  float: left
+}
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+select {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  overflow: auto;
+  transition: transform 0.5s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+  color: #d65a77;
+}
+
+.card p {
+  margin: 0 0 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.ativo {
+  opacity: 1;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.modal.ativo .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.fechar-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+  z-index: 10;
+  transition: color 0.2s ease;
+}
+
+.fechar-modal:hover {
+  color: #e91e63;
+}
+
+.modal-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.modal-esquerda {
+  flex: 1;
+  text-align: center;
+}
+
+.modal-imagem {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.modal-preco {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #e91e63;
+  margin: 0;
+}
+
+.modal-direita {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.modal-titulo {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  margin-top: 0;
+}
+
+.modal-descricao {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #666;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.modal-saiba-mais {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.modal-saiba-mais p {
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.botao-saiba-mais {
+  display: inline-block;
+  background: #e91e63;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.botao-saiba-mais:hover {
+  background: #c2185b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .modal-container {
+    flex-direction: column;
+  }
+  
+  .modal-content {
+    padding: 1.5rem;
+  }
+  
+  .modal-titulo {
+    font-size: 1.5rem;
+  }
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.ativo {
+  opacity: 1;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.modal.ativo .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Resto do CSS permanece igual ao anterior */
+.fechar-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+  z-index: 10;
+  transition: color 0.2s ease;
+}
+
+.fechar-modal:hover {
+  color: #e91e63;
+}
+
+.modal-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.modal-esquerda {
+  flex: 1;
+  text-align: center;
+}
+
+.modal-imagem {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.modal-preco {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #e91e63;
+  margin: 0;
+}
+
+.modal-direita {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.modal-titulo {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  margin-top: 0;
+}
+
+.modal-descricao {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #666;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.modal-saiba-mais {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.modal-saiba-mais p {
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.botao-saiba-mais {
+  display: inline-block;
+  background: #e91e63;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.botao-saiba-mais:hover {
+  background: #c2185b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .modal-container {
+    flex-direction: column;
+  }
+  
+  .modal-content {
+    padding: 1.5rem;
+  }
+  
+  .modal-titulo {
+    font-size: 1.5rem;
+  }
+}
